@@ -1,0 +1,250 @@
+body {
+    background-color: #C6D9E8;
+    height: 100vh;
+    overflow: hidden;
+    animation: bgChange 20s infinite;
+    animation-direction: alternate;
+}
+
+/* Standard syntax */
+
+@keyframes bgChange {
+    0% {
+        background: black;
+    }
+
+    50% {
+        background: skyblue;
+    }
+
+    100% {
+        background: black;
+    }
+}
+
+
+@-webkit-keyframes bgChange {
+    0% {
+        background: black;
+    }
+
+    25% {
+        background: skyblue;
+    }
+
+    50% {
+        background: deepskyblue;
+    }
+
+    75% {
+        background: skyblue;
+    }
+
+    100% {
+        background: black;
+    }
+}
+
+#sky {
+    overflow: hidden;
+    position: relative;
+    height: 200px;
+}
+
+.cloud {
+    position: absolute;
+    background-image: url('https://www.dl.dropboxusercontent.com/s/31ivp5fsjcgytgp/cloud1.png');
+    background-repeat: no-repeat;
+    width: 176px;
+    height: 114px;
+}
+
+#cloud1 {
+    top: 40px;
+    left: 400px;
+    animation: movingclouds 10s linear infinite;
+}
+
+#cloud2 {
+    top: 10px;
+    left: 600px;
+    animation: movingclouds 13s linear infinite;
+}
+
+#cloud3 {
+    top: 100px;
+    left: 100px;
+    transform: scale(0.9);
+    opacity: 0.9;
+    animation: movingclouds 15s linear infinite;
+}
+
+#cloud4 {
+    top: -20px;
+    left: 40px;
+    transform: scale(0.8);
+    opacity: 0.8;
+    animation: movingclouds 20s linear infinite;
+}
+
+#cloud5 {
+    top: 100px;
+    left: 500px;
+    transform: scale(0.7);
+    opacity: 0.7;
+    animation: movingclouds 25s linear infinite;
+}
+
+#cloud6 {
+    top: 20px;
+    left: 200px;
+    transform: scale(0.5);
+    opacity: 0.5;
+    animation: movingclouds 27s linear infinite;
+}
+
+#cloud7 {
+    top: 92px;
+    left: 700px;
+    transform: scale(0.4);
+    opacity: 0.4;
+    animation: movingclouds 29s linear infinite;
+}
+
+@keyframes movingclouds {
+    0% {
+        margin-left: 100%;
+    }
+
+    100% {
+        margin-left: -150%;
+    }
+}
+
+#home>div {
+    position: absolute;
+    bottom: 0;
+    right: 500px;
+}
+
+#home>div>img {
+    width: 30vw;
+}
+
+.bar {
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.bar-status {
+    animation: load 15s normal forwards;
+    border-radius: 50px;
+    background: rgb(10, 10, 10);
+    height: 1vh;
+    width: 0;
+}
+
+@keyframes load {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 50%;
+        background-color: rgb(255, 218, 6);
+        ;
+    }
+
+    75% {
+        width: 75%;
+        background-color: rgb(185, 80, 10);
+    }
+
+    100% {
+        width: 100%;
+        background-color: rgb(9, 6, 24);
+    }
+}
+
+
+@keyframes spin {
+    0% {
+        content: "Good Morning";
+    }
+
+    50% {
+        content: "Siesta";
+    }
+
+    100% {
+        content: "Good Night";
+    }
+}
+
+.sun {
+    width: 5vw;
+    height: 5vw;
+    background: #ff0;
+    background: radial-gradient(ellipse at center, #f90 0%, #fc0 60%, #ff0 100%);
+    border-radius: 100%;
+    position: absolute;
+    bottom: 0vw;
+    right: 9vw;
+    transform-origin: 20vw -10vh;
+    animation: suntrack 24s infinite forwards linear,
+        sunpulse 2s alternate infinite;
+}
+
+@keyframes suntrack {
+    0% {
+        top: 70%;
+        left: -10%;
+    }
+
+    25% {
+        top: 30%;
+        left: 25%;
+    }
+
+    50% {
+        top: 5%;
+        left: 50%;
+    }
+
+    75% {
+        top: 30%;
+        left: 75%;
+    }
+
+    100% {
+        top: 70%;
+        left: 110%;
+    }
+}
+
+/*@keyframes suntrack {
+    from {
+        transform: rotate(-360deg);
+    }
+
+    to {
+        transform: rotate(200deg);
+    }
+}*/
+
+@keyframes sunpulse {
+    from {
+        box-shadow: 0 0 100px #ff0, 0 0 100px #ff0;
+    }
+
+    to {
+        box-shadow: 0 0 50px #ff0, 0 0 75px #ff0;
+    }
+}
